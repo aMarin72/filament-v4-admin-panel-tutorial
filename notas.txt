@@ -1,0 +1,17 @@
+Subir a GitHub el proyecto:
+git init
+git status
+git add .
+git commit -m  “Aquí el comentario”
+git branch -M main
+git remote add origin https://github.com/xxxxxxxxxxxx //   este dato lo obtenemos de la página GitHub
+git push -u origin main
+
+Actualizar cambios del proyecto:
+git status
+git add .
+git commit -m  “Aquí el comentario”
+git push -u origin main
+
+Ver todos los commits:
+git log
