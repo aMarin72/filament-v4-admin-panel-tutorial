@@ -15,14 +15,17 @@ class StockMovementsTable
     {
         return $table
             ->columns([
-                TextColumn::make('product_id')
-                    ->numeric()
+                TextColumn::make('product.name')
                     ->sortable(),
-                TextColumn::make('user_id')
-                    ->numeric()
+                TextColumn::make('user.name')
                     ->sortable(),
                 TextColumn::make('type')
-                    ->badge(),
+                    ->badge()
+                    ->colors([
+                        'success' => 'in',
+                        'danger' => 'out',
+                    ])
+                    ->sortable(),
                 TextColumn::make('quantity')
                     ->numeric()
                     ->sortable(),
@@ -33,6 +36,7 @@ class StockMovementsTable
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('reason')
+                    ->limit(25, '...')
                     ->searchable(),
                 TextColumn::make('movement_date')
                     ->dateTime()
